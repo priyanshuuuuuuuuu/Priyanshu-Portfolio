@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 40 30% 94%;
+    --foreground: 25 25% 15%;
+
+    --card: 40 40% 97%;
+    --card-foreground: 25 25% 15%;
+
+    --popover: 40 40% 97%;
+    --popover-foreground: 25 25% 15%;
+
+    --primary: 25 30% 25%;
+    --primary-foreground: 40 40% 95%;
+
+    --secondary: 35 35% 45%;
+    --secondary-foreground: 40 40% 95%;
+
+    --muted: 40 25% 88%;
+    --muted-foreground: 25 15% 40%;
+
+    --accent: 10 40% 45%;
+    --accent-foreground: 40 40% 95%;
+
+    --destructive: 0 50% 40%;
+    --destructive-foreground: 40 40% 95%;
+
+    --border: 35 20% 75%;
+    --input: 35 20% 85%;
+    --ring: 25 30% 25%;
+
+    --radius: 0.25rem;
+
+    --newspaper-texture: repeating-linear-gradient(0deg, hsl(40 30% 94%), hsl(40 30% 94%) 1px, hsl(40 25% 92%) 1px, hsl(40 25% 92%) 2px);
+    --gradient-hero: linear-gradient(180deg, hsl(40 35% 96%) 0%, hsl(40 30% 92%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(40 40% 97%) 0%, hsl(40 35% 95%) 100%);
+    
+    --shadow-sm: 0 1px 3px hsl(25 25% 15% / 0.12);
+    --shadow-md: 0 2px 8px hsl(25 25% 15% / 0.15);
+    --shadow-lg: 0 4px 16px hsl(25 25% 15% / 0.18);
+    --shadow-hover: 0 6px 20px hsl(25 25% 15% / 0.2);
+
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 25 15% 12%;
+    --foreground: 40 30% 90%;
+
+    --card: 25 15% 16%;
+    --card-foreground: 40 30% 90%;
+
+    --popover: 25 15% 16%;
+    --popover-foreground: 40 30% 90%;
+
+    --primary: 40 35% 75%;
+    --primary-foreground: 25 25% 15%;
+
+    --secondary: 35 20% 30%;
+    --secondary-foreground: 40 30% 90%;
+
+    --muted: 25 10% 22%;
+    --muted-foreground: 35 15% 60%;
+
+    --accent: 10 30% 55%;
+    --accent-foreground: 40 30% 90%;
+
+    --destructive: 0 50% 45%;
+    --destructive-foreground: 40 30% 90%;
+
+    --border: 25 10% 25%;
+    --input: 25 10% 25%;
+    --ring: 40 35% 75%;
+
+    --newspaper-texture: repeating-linear-gradient(0deg, hsl(25 15% 12%), hsl(25 15% 12%) 1px, hsl(25 12% 10%) 1px, hsl(25 12% 10%) 2px);
+    --gradient-hero: linear-gradient(180deg, hsl(25 15% 14%) 0%, hsl(25 12% 10%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(25 15% 16%) 0%, hsl(25 12% 14%) 100%);
+    
+    --shadow-sm: 0 1px 3px hsl(0 0% 0% / 0.3);
+    --shadow-md: 0 2px 8px hsl(0 0% 0% / 0.4);
+    --shadow-lg: 0 4px 16px hsl(0 0% 0% / 0.5);
+    --shadow-hover: 0 6px 20px hsl(0 0% 0% / 0.4);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    background-image: url('/paper-texture.jpg');
+    background-size: 400px 400px;
+    background-repeat: repeat;
+    background-attachment: fixed;
+    @apply text-foreground;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-hover)];
+  }
+
+  .hover-tilt {
+    @apply transition-transform duration-300 hover:rotate-1;
+  }
+
+  .text-gradient {
+    @apply text-foreground;
+    text-shadow: 2px 2px 0px hsl(var(--muted));
+  }
+  
+  .newspaper-border {
+    @apply border-2 border-double border-border;
+  }
+  
+  .newspaper-divider {
+    @apply border-t-2 border-b border-border my-4;
+    height: 3px;
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  /* Vintage newspaper photo effects */
+  .vintage-photo {
+    filter: grayscale(100%) sepia(30%) contrast(110%);
+  }
+
+  .vintage-photo:hover {
+    filter: grayscale(0%) sepia(0%) contrast(100%);
+  }
+
+  @keyframes draw-line {
+    from {
+      stroke-dashoffset: 1000;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+  .animate-draw {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw-line 2s ease-out forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
