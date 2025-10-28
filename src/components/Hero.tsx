@@ -136,7 +136,7 @@ export function Hero() {
                 </p>
                 
                 <p className="mb-4">
-                  Beyond technical prowess, Priyanshu has cleared SSB interviews for the Indian Army and Navy, experiences that strengthened his discipline, leadership, and composure under pressure. He now seeks internship opportunities to apply his skills and contribute to projects that create real impact.
+                  Beyond technical prowess, Priyanshu has Participated in SSB interviews for the Indian Army and Navy, experiences that strengthened his discipline, leadership, and composure under pressure. He now seeks internship opportunities to apply his skills and contribute to projects that create real impact.
                 </p>
               </div>
 

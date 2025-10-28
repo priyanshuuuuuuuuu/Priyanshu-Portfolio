@@ -17,7 +17,7 @@ export function Skills() {
     },
     {
       title: "Data Science & ML",
-      skills: ["Google Colab", "Flask", "LibGDX", "LATEX", "Matplotlib", "Pandas", "NumPy", "PostgreSQL", "VIM", "Django", "LLM Integration", "AWS", "NoSQL", "Scikit-learn", "OpenCV", "TensorFlow", "PyTorch", "Tableau", "Azure"],
+      skills: ["Google Colab", "Flask", "LibGDX", "LATEX", "Matplotlib", "Pandas", "NumPy", "PostgreSQL", "VIM", "Django", "LLM Integration", "NoSQL", "Scikit-learn", "OpenCV", "PyTorch",],
     },
   ];
 

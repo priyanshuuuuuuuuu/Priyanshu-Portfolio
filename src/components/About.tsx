@@ -21,7 +21,7 @@ export function About() {
     {
       icon: Rocket,
       title: "Disciplined Leader",
-      description: "Cleared SSB interviews for Indian Army and Navy, strengthening my discipline, leadership, and composure under pressure.",
+      description: "Participated in SSB interviews for Indian Army and Navy, strengthening my discipline, leadership, and composure under pressure.",
     },
   ];
 
